@@ -2,7 +2,9 @@
 
 This hobby project uses Emacs Lisp to solve numeric puzzles as those proposed by Project Euler.
 
-o## Table of contents
+This is a personal, exploratory project with no fixed roadmap. Its aim is essentially to improve my skills. Development happens irregularly as time permits.
+
+## Table of contents
 
 **Project Euler problems:**
 [1](#project-euler-1-multiples-of-3-or-5), ..., [5](#project-euler-5-smallest-multiple), [6](#project-euler-6-sum-square-difference), ..., [9](#project-euler-9-special-pythagorean-triplet).
