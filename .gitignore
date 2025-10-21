@@ -1,4 +1,8 @@
+.gitignore
 *.org
 *.html
-
+z*.*
+*.el~
+*.elc
+*.eln
 
