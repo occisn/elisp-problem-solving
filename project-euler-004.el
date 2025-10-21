@@ -1,7 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
 
 (defun project-euler-4a ()
-  "Solve Project Euler 4. Common Lisp style."
+  "Solve Project Euler 4.
+Emacs Lisp with cl-lib"
 
   (cl-labels ((reverse-number (n &optional acc0)
                 "Reverse the N, which is supposed to be an integer >= 0.
@@ -24,7 +25,8 @@ ACC0 is an accumulator used during recursion.
 	     maximize c)))
 
 (defun project-euler-4b ()
-  "Solve Project Euler 4. Emacs Lisp style"
+  "Solve Project Euler 4. 
+Traditional Emacs Lisp without cl-lib"
   
   (letrec (
            ;; 'reverse-number'
