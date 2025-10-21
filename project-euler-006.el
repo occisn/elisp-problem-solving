@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 
 (defun project-euler-6 (n)
   "Solve Project Euler 6."
@@ -10,4 +11,6 @@
     res))
 
 (project-euler-6 10) ; 2640
-(project-euler-6 100)
+(project-euler-6 100); 25164150
+
+;;; end
