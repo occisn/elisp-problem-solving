@@ -1,19 +1,32 @@
 ;;; -*- lexical-binding: t; -*-
 
-(defun project-euler-5 (n)
+(defun project-euler-5 ()
   "Solve Project Euler 5."
-  (let* ((gcd (lambda (a b)
-                (if (zerop b)
-                    (abs a)
-                  (gcd b (mod a b)))))
-         (lcm (lambda (a b)
-                (/ (abs (* a b)) (gcd a b))))
-         (res 1))
-    (dotimes  (i n)
-      (setq res (lcm res (+ i 1))))
+  (let ((res 1))
+    (dotimes  (i 20)
+      (setq res (cl-lcm res (+ i 1))))
     res))
 
-(project-euler-5 10) ; 2520
-(project-euler-5 20)
+(defun my/gcd--traditional (a b)
+  "Return gcd of A and B.
+Traditional equivalent of cl-gcd.
+(v1, available in occisn/elisp-utils GitHub repository)"
+  (if (zerop b)
+      (abs a)
+    (my/gcd--traditional b (mod a b))))
+
+(defun my/lcm--traditional (a b)
+  "Return lcm of A and B.
+Traditional equivalent of cl-lcm.
+Requires my/gcd--traditional.
+(v1, available in occisn/elisp-utils GitHub repository)"
+  (/ (abs (* a b)) (my/gcd--traditional a b)))
+
+(defun project-euler-5--traditional ()
+  "Solve Project Euler 5."
+  (let* ((res 1))
+    (dotimes  (i 20)
+      (setq res (my/lcm--traditional res (+ i 1))))
+    res))
 
 ;;; end
