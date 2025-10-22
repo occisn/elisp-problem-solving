@@ -2,6 +2,18 @@
 
 (defun project-euler-9 ()
   "Solve Project Euler 9."
+  (let ((n 1000))
+    (cl-loop for c from n downto 3
+             append 
+             (cl-loop with bmax = (min (- c 1) (- n c 1))
+                      with bmin = (max 2 (/ (- n c) 2))
+                      for b from bmax downto bmin
+                      for a = (- n b c)
+                      when (= (* c c) (+ (* a a) (* b b)))
+                      collect (list (* a b c) :abc a b c)))))
+
+(defun project-euler-9--traditional ()
+  "Solve Project Euler 9."
   (let ((n 1000)
         (res nil))
     (let ((c n))
@@ -22,7 +34,5 @@
             (setq b (- b 1))))
         (setq c (- c 1))))
     res))
-
-(project-euler-9)
 
 ;;; end
