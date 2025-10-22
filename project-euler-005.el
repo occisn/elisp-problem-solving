@@ -1,9 +1,15 @@
 ;;; -*- lexical-binding: t; -*-
 
-(defun project-euler-5 ()
-  "Solve Project Euler 5."
+(defun project-euler-5a ()
+  "Solve Project Euler 5.
+Requires cl-lib."
+  (cl-lcm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20))
+
+(defun project-euler-5b ()
+  "Solve Project Euler 5.
+Requires cl-lib."
   (let ((res 1))
-    (dotimes  (i 20)
+    (dotimes (i 20)
       (setq res (cl-lcm res (+ i 1))))
     res))
 
