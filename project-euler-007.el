@@ -2,7 +2,6 @@
 
 (defun my/primep (n)
   "Return t if and only if N is prime. N is supposed to be an integer >= 1.
-Inspired by https://github.com/tkych/cl-mod-prime
 (v1, available in occisn/elisp-utils GitHub repository)"
   (cond ((= 1 n) nil)
 	((member n '(2 3 5 7)) t)
@@ -42,7 +41,6 @@ This code is written in traditional Emacs Lisp, without cl-lib (where the equiva
 
 (defun my/primep--traditional (n)
   "Return t if and only if N is prime. N is supposed to be an integer >= 1.
-Inspired by https://github.com/tkych/cl-mod-prime.
 This code is written in traditional Emacs Lisp, without cl-lib.
 Requires my/isqrt--traditional.
 (v1, available in occisn/elisp-utils GitHub repository)"
