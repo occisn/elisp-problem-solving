@@ -35,4 +35,9 @@
         (setq c (- c 1))))
     res))
 
+(ert-deftest test-project-euler-9 ()
+  :tags '(elisp-problem-solving)
+  (should (= 31875000 (caar (project-euler-9))))
+  (should (= 31875000 (caar (project-euler-9--traditional)))))
+
 ;;; end

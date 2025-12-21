@@ -73,4 +73,10 @@ Traditional Emacs Lisp, without cl-lib"
           (setq continue nil))))
     n))
 
+(ert-deftest test-project-euler-7 ()
+  :tags '(elisp-problem-solving)
+  (should (= 13 (project-euler-7 6)))
+  (should (= 104743 (project-euler-7)))
+  (should (= 104743 (project-euler-7--traditional))))
+
 ;;; end

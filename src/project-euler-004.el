@@ -42,4 +42,9 @@ Traditional Emacs Lisp without cl-lib"
       (setq a (1+ a)))
     c-max))
 
+(ert-deftest test-project-euler-4 ()
+  :tags '(elisp-problem-solving)
+  (should (= 906609 (project-euler-4)))
+  (should (= 906609 (project-euler-4--traditional))))
+
 ;;; end

@@ -40,4 +40,9 @@ Requires my/isqrt--traditional
 Require my/largest-prime-factor--traditional"
   (my/largest-prime-factor--traditional (or n 600851475143)))
 
+(ert-deftest test-project-euler-3 ()
+  :tags '(elisp-problem-solving)
+  (should (= 29 (project-euler-3 13195)))
+  (should (= 6857 (project-euler-3))))
+
 ;;; end

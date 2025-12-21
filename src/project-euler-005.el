@@ -35,4 +35,10 @@ Requires my/gcd--traditional.
       (setq res (my/lcm--traditional res (+ i 1))))
     res))
 
+(ert-deftest test-project-euler-5 ()
+  :tags '(elisp-problem-solving)
+  (should (= 232792560 (project-euler-5a)))
+  (should (= 232792560 (project-euler-5b)))
+  (should (= 232792560 (project-euler-5--traditional))))
+
 ;;; end

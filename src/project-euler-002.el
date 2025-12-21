@@ -14,4 +14,8 @@
           (setq sum (+ sum f2)))))
     sum))
 
+(ert-deftest test-project-euler-2 ()
+  :tags '(elisp-problem-solving)
+  (should (= 4613732 (project-euler-002))))
+
 ;; end

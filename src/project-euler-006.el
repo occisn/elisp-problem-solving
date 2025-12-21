@@ -17,4 +17,10 @@
       (setq res (- res (* i i))))
     res))
 
+(ert-deftest test-project-euler-6 ()
+  :tags '(elisp-problem-solving)
+  (should (= 2640 (project-euler-6 10)))
+  (should (= 25164150 (project-euler-6)))
+  (should (= 25164150 (project-euler-6--traditional))))
+
 ;;; end

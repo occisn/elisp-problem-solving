@@ -73,4 +73,11 @@ Requires my/eratosthenes-sieve--traditional"
         (setq i (1+ i)))
       res)))
 
+(ert-deftest test-project-euler-10 ()
+  :tags '(elisp-problem-solving)
+  (should (= 17 (project-euler-10 10)))
+  (should (= 17 (project-euler-10--traditional 10)))
+  (should (= 142913828922 (project-euler-10)))
+  (should (= 142913828922 (project-euler-10--traditional))))
+
 ;;; end
