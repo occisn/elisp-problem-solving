@@ -27,7 +27,6 @@ Emacs Lisp with cl-lib"
 (defun project-euler-4--traditional ()
   "Solve Project Euler 4. 
 Traditional Emacs Lisp without cl-lib"
-  
   (let ((a 100)
         (c-max 0))
     (while (<= a 998)
