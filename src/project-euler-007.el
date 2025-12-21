@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; -*-
 
-(defun my/primep (n)
+(defun pe007--primep (n)
   "Return t if and only if N is prime. N is supposed to be an integer >= 1.
 (v1, available in occisn/elisp-utils GitHub repository)"
   (cond ((= 1 n) nil)
@@ -17,12 +17,12 @@
   "Solve Project Euler 7."
   (let ((target (or target0 10001)))
     (cl-loop for n from 2 
-	     when (my/primep n)
+	     when (pe007--primep n)
 	     count t into counter
 	     until (= counter target)
 	     finally return n)))
 
-(defun my/isqrt--traditional (n)
+(defun pe007--isqrt--traditional (n)
   "Return the integer square root of N (largest integer <= sqrt(N)).
 N is supposed to be >= 0.
 This code is written in traditional Emacs Lisp, without cl-lib (where the equivalent exists: cl-isqrt).
@@ -39,10 +39,10 @@ This code is written in traditional Emacs Lisp, without cl-lib (where the equiva
         (setq y (/ (+ x (/ n x)) 2)))
       x))))
 
-(defun my/primep--traditional (n)
+(defun pe007--primep--traditional (n)
   "Return t if and only if N is prime. N is supposed to be an integer >= 1.
 This code is written in traditional Emacs Lisp, without cl-lib.
-Requires my/isqrt--traditional.
+Requires pe007--isqrt--traditional.
 (v1, available in occisn/elisp-utils GitHub repository)"
   
   (cond ((= 1 n) nil)
@@ -50,7 +50,7 @@ Requires my/isqrt--traditional.
 	((zerop (mod n 2)) nil)
 	((zerop (mod n 3)) nil)
 	(t (let ((factor 5)
-                 (root-n (my/isqrt--traditional n))
+                 (root-n (pe007--isqrt--traditional n))
                  (result t))
              (while (<= factor root-n)
                (when (or (zerop (mod n factor))
@@ -67,7 +67,7 @@ Traditional Emacs Lisp, without cl-lib"
         (continue t))
     (while continue
       (setq n (1+ n))
-      (when (my/primep--traditional n)
+      (when (pe007--primep--traditional n)
         (setq counter (1+ counter))
         (when (= counter 10001)
           (setq continue nil))))

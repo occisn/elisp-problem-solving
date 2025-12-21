@@ -13,26 +13,26 @@ Requires cl-lib."
       (setq res (cl-lcm res (+ i 1))))
     res))
 
-(defun my/gcd--traditional (a b)
+(defun pe005--gcd--traditional (a b)
   "Return gcd of A and B.
 Traditional equivalent of cl-gcd.
 (v1, available in occisn/elisp-utils GitHub repository)"
   (if (zerop b)
       (abs a)
-    (my/gcd--traditional b (mod a b))))
+    (pe005--gcd--traditional b (mod a b))))
 
-(defun my/lcm--traditional (a b)
+(defun pe005--lcm--traditional (a b)
   "Return lcm of A and B.
 Traditional equivalent of cl-lcm.
-Requires my/gcd--traditional.
+Requires pe005--gcd--traditional.
 (v1, available in occisn/elisp-utils GitHub repository)"
-  (/ (abs (* a b)) (my/gcd--traditional a b)))
+  (/ (abs (* a b)) (pe005--gcd--traditional a b)))
 
 (defun project-euler-5--traditional ()
   "Solve Project Euler 5."
   (let* ((res 1))
     (dotimes  (i 20)
-      (setq res (my/lcm--traditional res (+ i 1))))
+      (setq res (pe005--lcm--traditional res (+ i 1))))
     res))
 
 (ert-deftest test-project-euler-5 ()
