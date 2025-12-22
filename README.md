@@ -2,7 +2,7 @@
 
 This project uses Emacs Lisp to solve numeric puzzles as those proposed by Project Euler.
 
-This was a temporary hobby project. No further development is foreseen.
+This is a personal, exploratory project with no fixed roadmap. Its aim is essentially to improve my skills. Development happens irregularly as time permits.
 
 Solutions are proposed in Emacs Lisp using cl-lib, and also in "traditional" Emacs Lisp without cl-lib.
 
